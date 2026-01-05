@@ -24,9 +24,7 @@ public class LibroService {
         this.autorRepository = autorRepository;
     }
 
-    // -------------------------------------------------------------------------
-    // BUSCAR POR TÍTULO
-    // -------------------------------------------------------------------------
+    
     public Libros buscarYGuardar(String titulo) {
         String json = literService.BuscarLibroPorTitulo(titulo);
 
@@ -43,9 +41,7 @@ public class LibroService {
         return guardarLibroDesdeJSON(libroJson);
     }
 
-    // -------------------------------------------------------------------------
-    // BUSCAR POR ID CORREGIDO
-    // -------------------------------------------------------------------------
+    
     public Libros buscarYGuardarPorId(int id) {
         String json = literService.BuscarLibroPorID(id);
 
@@ -62,9 +58,7 @@ public class LibroService {
         return guardarLibroDesdeJSON(libroJson);
     }
 
-    // -------------------------------------------------------------------------
-    // MÉTODO REUTILIZABLE QUE GUARDA EL LIBRO Y EL AUTOR
-    // -------------------------------------------------------------------------
+    
     private Libros guardarLibroDesdeJSON(JSONObject libroJson) {
 
         String nombreLibro = libroJson.getString("title");
@@ -86,3 +80,4 @@ public class LibroService {
         return libro;
     }
 }
+
